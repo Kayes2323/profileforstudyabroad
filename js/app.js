@@ -65,11 +65,13 @@
     $('#pj').innerHTML = S.projects.map(function (p, i) {
       var a = i % 2 === 0, hasShot = p.shots && p.shots.length;
       var portrait = hasShot && p.shots[0].ar && p.shots[0].ar < 0.9;
+      var ph = hasShot ? p.shots.filter(function (s) { return s.ar && s.ar < 0.9; }).slice(0, 3) : [];
+      var fill = ph.length && ph.length < 3 ? '<div class="logo fill" style="--lbg:' + esc(p.logoBg) + ';--lw:' + (p.logoW || 560) + 'px;grid-column:span ' + (3 - ph.length) + '"><img src="' + esc(p.logo) + '" alt="' + esc(p.name) + ' logo"></div>' : '';
       var main = !hasShot ? logoTile(p, 'm') : portrait
-        ? '<div class="phones">' + p.shots.filter(function (s) { return s.ar && s.ar < 0.9; }).slice(0, 3).map(function (s) { return shotImg(s, p, ''); }).join('') + '</div>'
+        ? '<div class="phones">' + ph.map(function (s) { return shotImg(s, p, ''); }).join('') + fill + '</div>'
         : shotImg(p.shots[0], p, 'm');
-      var small = hasShot ? logoTile(p, 'sm') : placeholder('sm', 'shotNeeded');
-      var cat = L(p.category) || U('catPending');
+      var small = hasShot ? (fill ? '' : logoTile(p, 'sm')) : placeholder('sm', 'shotNeeded');
+            var cat = L(p.category) || U('catPending');
       var chips = '<div class="chips"><span class="chip fill">' + esc(L(S.statusLabels[p.status])) + '</span><span class="chip">' + esc(cat) + '</span></div>' +
         '<div class="chips">' + (p.tech || []).map(function (t) { return '<span class="chip">' + esc(t) + '</span>'; }).join('') + '</div>';
       var info = '<div class="col"><div class="t">' + chips + '<p>' + esc(L(p.summary) || U('cs.pending')) + '</p></div>' + linkBtns(p) +
@@ -82,21 +84,22 @@
     renderContact();
   }
 
-  function contactItem(icon, label, value, href) {
-    var v = value ? '<a href="' + esc(href) + '" target="_blank" rel="noopener">' + esc(value.replace(/^https?:\/\//, '')) + '</a>' : '<span>' + esc(U('tbp')) + '</span>';
-    return '<div>' + icon + '<span>' + esc(label) + ': </span>' + v + '</div>';
+  var ICON = { github: '&lt;/&gt;', linkedin: 'in', facebook: 'f', instagram: 'ig', email: '@', whatsapp: 'wa' };
+  function pill(key, label, v, cls) {
+    var href = v.url, ext = href.indexOf('mailto:') === 0 ? '' : ' target="_blank" rel="noopener"';
+    return '<a class="pill ' + (cls || '') + '" href="' + esc(href) + '"' + ext + '><i class="ic" aria-hidden="true">' + ICON[key] + '</i><span class="pl"><b>' + esc(label) + '</b><span>' + esc(v.label || U('waText')) + '</span></span></a>';
   }
   function renderContact() {
-    var c = S.contact;
-    var ic = {
-      code: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg>',
-      mail: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14"/><path d="M3 7l9 6 9-6"/></svg>',
-      globe: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>'
-    };
-    $('#cb').innerHTML =
-      contactItem(ic.code, 'GitHub', c.github, c.github) +
-      contactItem(ic.mail, U('mail'), c.email, 'mailto:' + c.email) +
-      contactItem(ic.globe, 'LinkedIn', c.linkedin, c.linkedin);
+    var c = S.contact, parts = [];
+    [['github', 'GitHub'], ['linkedin', 'LinkedIn'], ['facebook', 'Facebook'], ['instagram', 'Instagram'], ['email', U('mail')]].forEach(function (x) {
+      parts.push(c[x[0]] ? pill(x[0], x[1], c[x[0]]) : '<div class="pill off"><i class="ic" aria-hidden="true">' + ICON[x[0]] + '</i><span class="pl"><b>' + esc(x[1]) + '</b><span>' + esc(U('tbp')) + '</span></span></div>');
+    });
+    if (c.whatsapp) parts.push(pill('whatsapp', 'WhatsApp', { url: c.whatsapp.url, label: U('waText') }, 'wa'));
+    $('#cb').innerHTML = parts.join('');
+    var soc = $('#soc');
+    if (soc) soc.innerHTML = '<span>' + esc(U('findMe')) + '</span>' + ['linkedin', 'github', 'facebook', 'instagram'].filter(function (k) { return c[k]; }).map(function (k) {
+      return '<a href="' + esc(c[k].url) + '" target="_blank" rel="noopener">' + esc(k === 'github' ? 'GitHub' : k === 'linkedin' ? 'LinkedIn' : k === 'facebook' ? 'Facebook' : 'Instagram') + '</a>';
+    }).join('');
   }
 
   /* ---- case study ---- */

@@ -46,7 +46,9 @@ Set `contact.github`, `contact.linkedin`, `contact.email` in `js/content.js`. Un
 | `moment-*.jpg` (5) | "Beyond code" collage | yes | owner supplied, confirm |
 | `logo-move.jpg`, `logo-determind.jpg`, `logo-sondhan.jpg`, `logo-mino.jpg`, `logo-furqan.jpg` | Project logos, shown unchanged (resized only) | yes | owner supplied, confirm |
 | `projects/move/*.jpg` (4) | MOVE slide and case study | taken from `docs/screenshots` in the move-app repository | owner's own repository, confirm |
-| Screenshots for DeterMind, Sondhan, Mino, Furqan | Project slides, case studies | **not found in repositories, not supplied** | n/a |
+| `projects/mino/*.jpg` (4), `projects/furqan/*.jpg` (3), `projects/sondhan/home.jpg` | Mino, Furqan, Sondhan slides and case studies | supplied by the owner (phone screenshots; the phone status bar was cropped off one) | owner supplied, confirm |
+| `projects/determind/login.jpg`, `projects/sondhan/request.jpg` | DeterMind and Sondhan slides | captured from the repositories running locally without a backend (signed out) | own code |
+| Signed-in DeterMind screens (to-do, dashboard, focus, Sigma) | DeterMind case study | **not supplied** (needs a Supabase login) | n/a |
 | Higher-resolution Mino logo | Mino tile (current file is 216 px) | **needed** | n/a |
 | Personal logo / monogram | Header, favicon | **not received**; `favicon.svg` is a neutral placeholder dot | n/a |
 | `og.jpg` | Social preview (screenshot of the hero) | generated | n/a |
@@ -55,14 +57,17 @@ Photos with other people in them were left out on purpose.
 
 ## Still needed from the owner
 
-1. For DeterMind, Sondhan, Mino and Furqan: 2 or more real screenshots each (desktop and mobile).
-2. Confirm that each live URL is current (they could not be opened while building).
-3. LinkedIn and email for the contact section (GitHub is set).
+1. Signed-in DeterMind screenshots (to-do or routine, dashboard, focus, Sigma).
+2. Your own writing about yourself (Introduction, About) and, per project, the problem, target users and the split between your decisions and AI-assisted work.
+3. Confirm that each live URL is current (they could not be opened while building).
 4. A higher-resolution Mino logo, and a personal logo or monogram if wanted.
-5. For every project: problem, target users, and the split between your own decisions and AI-assisted work.
-6. SSC year, if it should be shown.
-7. The final domain (for the social preview image URL).
-8. Whether Bazare and Healdi should also appear.
+5. SSC year, if it should be shown.
+6. The final domain (for the social preview image URL).
+7. Whether Bazare and Healdi should also appear.
+
+## Contact details on the site
+
+GitHub, LinkedIn, Facebook, Instagram, email and a WhatsApp button are set in `contact` in `js/content.js`. The WhatsApp number is not printed on the page, but it is inside the `wa.me` link, so anyone who inspects the link can read it.
 
 ## Known discrepancies
 

@@ -28,8 +28,15 @@ window.SITE = {
     { id: "ssc", year: null }
   ],
 
-  /* github is the owner's profile (named as the author in every project README). Add linkedin / email when supplied. */
-  contact: { github: "https://github.com/Kayes2323", linkedin: null, email: null, other: [] },
+  /* Links supplied or confirmed by the owner. The WhatsApp number is only used inside the wa.me link and is never printed on the page. */
+  contact: {
+    github: { url: "https://github.com/Kayes2323", label: "Kayes2323" },
+    linkedin: { url: "https://www.linkedin.com/in/abdulazizkayes", label: "abdulazizkayes" },
+    facebook: { url: "https://www.facebook.com/share/1K98ojDAwT/", label: "Abdul Aziz Kayes" },
+    instagram: { url: "https://www.instagram.com/abdulazizkayes/", label: "abdulazizkayes" },
+    email: { url: "mailto:aakayes99@gmail.com", label: "aakayes99@gmail.com" },
+    whatsapp: { url: "https://wa.me/8801604508268" }
+  },
 
   statusLabels: {
     unverified: { en: "Status: not yet verified", bn: "অবস্থা: এখনও যাচাই হয়নি" },
@@ -117,7 +124,9 @@ window.SITE = {
         bn: "README-তে আমাকে নির্মাতা হিসেবে উল্লেখ করা আছে। আমার সিদ্ধান্ত আর এআই-সহায়তার সুনির্দিষ্ট ভাগ এখনও যোগ হয়নি।"
       },
       tech: ["React", "Vite", "Supabase", "Zustand", "React Router", "Recharts", "Framer Motion", "Tailwind CSS", "Groq API"],
-      shots: [],
+      shots: [
+        { ar: 0.462, src: "assets/img/projects/determind/login.jpg", alt: { en: "DeterMind sign-in screen", bn: "ডিটারমাইন্ডের সাইন-ইন স্ক্রিন" } }
+      ],
       challenges: {
         en: "The latest commit records moving the AI calls to a server route so the API key never ships to the browser. The route also checks that the caller has a valid session.",
         bn: "সর্বশেষ কমিটে এআই কলগুলো সার্ভার রুটে সরানোর কথা লেখা আছে, যাতে এপিআই কী কখনও ব্রাউজারে না যায়। রুটটি কলারের বৈধ সেশনও যাচাই করে।"
@@ -126,7 +135,7 @@ window.SITE = {
         en: "In active development, as the README says. The AI assistant needs a server-side key to work.",
         bn: "README অনুযায়ী সক্রিয় উন্নয়নে আছে। এআই সহকারী চলতে সার্ভার-সাইড কী লাগে।"
       },
-      basis: ["README", "src/pages and src/store", "api/ai.js", "package.json"],
+      basis: ["README", "src/pages and src/store", "api/ai.js", "package.json", "sign-in screen captured from the repository running locally"],
       links: { demo: "https://deter-mind.vercel.app", repo: "https://github.com/Kayes2323/DeterMind" },
       related: ["move", "sondhan"]
     },
@@ -162,7 +171,10 @@ window.SITE = {
         bn: "আমার প্রথম প্রোডাক্ট। ধারণা থেকে এই রিপোজিটরির কোড পর্যন্ত আমি নিয়ে গেছি। আমার সিদ্ধান্ত আর এআই-সহায়তার সুনির্দিষ্ট ভাগ এখনও যোগ হয়নি।"
       },
       tech: ["HTML", "CSS", "JavaScript", "Firebase Auth", "Firestore", "Service worker (PWA)", "Vercel"],
-      shots: [],
+      shots: [
+        { ar: 0.53, src: "assets/img/projects/sondhan/home.jpg", alt: { en: "Sondhan home screen with quick actions to find a donor, post an urgent request, find blood banks and register as a donor", bn: "রক্তদাতা খোঁজা, জরুরি অনুরোধ, ব্লাড ব্যাংক খোঁজা ও দাতা হিসেবে নিবন্ধনের দ্রুত বোতামসহ সন্ধান অ্যাপের হোম স্ক্রিন" } },
+        { ar: 0.462, src: "assets/img/projects/sondhan/request.jpg", alt: { en: "Sondhan emergency blood request form", bn: "সন্ধান অ্যাপের জরুরি রক্তের অনুরোধ ফর্ম" } }
+      ],
       challenges: {
         en: "Protecting donors' phone numbers. The repository's Firestore rules separate public profiles from private contact details and cap how many numbers one user can reveal.",
         bn: "দাতাদের ফোন নম্বর সুরক্ষিত রাখা। রিপোজিটরির ফায়ারস্টোর রুলস পাবলিক প্রোফাইল আর ব্যক্তিগত যোগাযোগের তথ্য আলাদা করে এবং একজন ব্যবহারকারী কতগুলো নম্বর দেখতে পারবে তা সীমিত করে।"
@@ -171,7 +183,7 @@ window.SITE = {
         en: "The repository has no README yet. Its rules file says it is a reference copy that must be published through the Firebase console, so whether those rules are active could not be checked.",
         bn: "রিপোজিটরিতে এখনও কোনো README নেই। রুলস ফাইলে লেখা আছে এটি রেফারেন্স কপি, ফায়ারবেস কনসোল দিয়ে প্রকাশ করতে হয়, তাই নিয়মগুলো চালু আছে কি না যাচাই করা যায়নি।"
       },
-      basis: ["HTML pages and app.js", "manifest.json", "firestore.rules", "vercel.json", "my GitHub profile README (live URL)"],
+      basis: ["HTML pages and app.js", "manifest.json", "firestore.rules", "vercel.json", "my GitHub profile README (live URL)", "home screenshot supplied by me", "request form captured from the repository running locally"],
       links: { demo: "https://sondhan.org", repo: "https://github.com/Kayes2323/Life-Drop" },
       related: ["mino", "move"]
     },
@@ -206,7 +218,12 @@ window.SITE = {
         bn: "রিপোজিটরিতে আমার আর্কিটেকচার ও কনটেন্ট-অডিটের নথি আছে। আমার সিদ্ধান্ত আর এআই-সহায়তার সুনির্দিষ্ট ভাগ এখনও যোগ হয়নি।"
       },
       tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui", "Firebase", "Stripe", "Google Gemini"],
-      shots: [],
+      shots: [
+        { ar: 0.488, src: "assets/img/projects/mino/home.jpg", alt: { en: "Mino home screen with the IELTS 7.0 goal, progress and quick-start cards", bn: "আইইএলটিএস ৭.০ লক্ষ্য, অগ্রগতি ও দ্রুত শুরুর কার্ডসহ মিনোর হোম স্ক্রিন" } },
+        { ar: 0.494, src: "assets/img/projects/mino/ielts.jpg", alt: { en: "Mino IELTS hub with the study plan and practice sections", bn: "স্টাডি প্ল্যান ও অনুশীলন অংশসহ মিনোর আইইএলটিএস হাব" } },
+        { ar: 0.489, src: "assets/img/projects/mino/chat.jpg", alt: { en: "Mino AI mentor chat suggesting what to study today", bn: "আজ কী পড়বেন তা জানাচ্ছে মিনোর এআই মেন্টর চ্যাট" } },
+        { ar: 0.494, src: "assets/img/projects/mino/abroad.jpg", alt: { en: "Mino Study Abroad cards for the United Kingdom and Germany", bn: "যুক্তরাজ্য ও জার্মানির জন্য মিনোর স্টাডি অ্যাব্রড কার্ড" } }
+      ],
       challenges: {
         en: "An architecture audit in the repository records fixing a build that failed without a Stripe key, a broken checkout redirect and TypeScript errors, and notes a security gap in the subscription rules to be closed by granting premium only from a server webhook.",
         bn: "রিপোজিটরির একটি আর্কিটেকচার অডিটে স্ট্রাইপ কী ছাড়া বিল্ড ফেল, ভাঙা চেকআউট রিডাইরেক্ট ও টাইপস্ক্রিপ্ট ত্রুটি ঠিক করার কথা আছে, আর সাবস্ক্রিপশন রুলসে একটি নিরাপত্তা ফাঁকের উল্লেখ আছে যেটা শুধু সার্ভার ওয়েবহুক থেকে প্রিমিয়াম দিয়ে বন্ধ করতে হবে।"
@@ -215,7 +232,7 @@ window.SITE = {
         en: "In active development. In the code, the Stripe webhook that upgrades an account is still marked TODO, so paid plans cannot be activated automatically yet.",
         bn: "সক্রিয় উন্নয়নে আছে। কোডে অ্যাকাউন্ট আপগ্রেড করার স্ট্রাইপ ওয়েবহুক এখনও TODO চিহ্নিত, তাই পেইড প্ল্যান এখনও স্বয়ংক্রিয়ভাবে চালু করা যায় না।"
       },
-      basis: ["docs/ARCHITECTURE.md", "docs/FOUNDATION_INTEGRATION_INVENTORY.md", "app routes and api routes", "package.json", "my GitHub profile README (name and live URL)"],
+      basis: ["docs/ARCHITECTURE.md", "docs/FOUNDATION_INTEGRATION_INVENTORY.md", "app routes and api routes", "package.json", "my GitHub profile README (name and live URL)", "screenshots supplied by me"],
       links: { demo: "https://vocabrain.vercel.app", repo: "https://github.com/Kayes2323/Vocabrain" },
       related: ["sondhan", "furqan"]
     },
@@ -247,7 +264,11 @@ window.SITE = {
         bn: "README-তে আমাকে নির্মাতা হিসেবে উল্লেখ করা আছে। রিপোজিটরিতে CLAUDE.md ও AGENTS.md ফাইল আছে, অর্থাৎ কাজে এআই কোডিং টুল ব্যবহৃত হয়েছে। আমার সিদ্ধান্ত আর এআই-সহায়তার সুনির্দিষ্ট ভাগ এখনও যোগ হয়নি।"
       },
       tech: ["Next.js", "TypeScript", "Firebase", "Google Gemini", "Tailwind CSS", "Vercel"],
-      shots: [],
+      shots: [
+        { ar: 0.5, src: "assets/img/projects/furqan/home.jpg", alt: { en: "Furqan home screen with the verse of the day and quick access cards", bn: "আজকের আয়াত ও দ্রুত অ্যাক্সেস কার্ডসহ ফুরকানের হোম স্ক্রিন" } },
+        { ar: 0.496, src: "assets/img/projects/furqan/nur.jpg", alt: { en: "NUR AI companion with popular questions", bn: "জনপ্রিয় প্রশ্নসহ নূর এআই সহচর" } },
+        { ar: 0.495, src: "assets/img/projects/furqan/knowledge.jpg", alt: { en: "Furqan knowledge hub with research and sirah modules", bn: "গবেষণা ও সীরাত মডিউলসহ ফুরকানের জ্ঞান হাব" } }
+      ],
       challenges: {
         en: "The README notes that NUR is called from a server route so the Gemini key never reaches the browser.",
         bn: "README-তে লেখা আছে নূর সার্ভার রুট থেকে ডাকা হয়, যাতে জেমিনি কী কখনও ব্রাউজারে না পৌঁছায়।"
@@ -256,7 +277,7 @@ window.SITE = {
         en: "NUR is an AI companion, so its answers should be reviewed by a qualified person before being relied on.",
         bn: "নূর একটি এআই সহচর, তাই এর উত্তরের উপর নির্ভর করার আগে যোগ্য কাউকে দিয়ে যাচাই করা উচিত।"
       },
-      basis: ["README", "app/components", "app/api/nur", "package.json"],
+      basis: ["README", "app/components", "app/api/nur", "package.json", "screenshots supplied by me"],
       links: { demo: "https://furqan-tan.vercel.app", repo: "https://github.com/Kayes2323/furqan" },
       related: ["mino", "determind"]
     }
@@ -293,7 +314,7 @@ window.SITE = {
       pjScript: "Project", caseLink: "Case study →", catPending: "Category: to be confirmed",
       liveLink: "Live ↗", codeLink: "GitHub ↗", shotNeeded: "Screenshot needed",
       cHead: "Let's work", cScript: "Together",
-      cCopy: "Open to relevant conversations and collaboration. More profile links will be added once supplied.",
+      cCopy: "Open to relevant conversations and collaboration. Reach me on any of these.", waText: "Message on WhatsApp", findMe: "Find me",
       mail: "Email", tbp: "To be provided",
       phDesk: "Photo needed: your desk or workspace", phShot: "Authentic screenshot or work photo needed",
       foot: "Content marked as pending is not yet verified. © Abdul Aziz Kayes",
@@ -301,7 +322,7 @@ window.SITE = {
         hero: "Abdul Aziz Kayes smiling in front of a flowering bougainvillea", intro: "Abdul Aziz Kayes standing by a lake", about: "Abdul Aziz Kayes looking up at the evening sky",
         edu: "Abdul Aziz Kayes beside the Dhaka College Science Club emblem", s1: "Abdul Aziz Kayes reading a book in a bookshop", s2: "Abdul Aziz Kayes at a railway platform",
         mWater: "Abdul Aziz Kayes sitting in front of a waterfall", mLamp: "Abdul Aziz Kayes beside a street lamp at dusk", mJersey: "Abdul Aziz Kayes sitting on grass",
-        mKurta: "Abdul Aziz Kayes in a pink kurta", mHaj: "Abdul Aziz Kayes in the evening in Hajiganj"
+        mKurta: "Abdul Aziz Kayes in a pink kurta", mHaj: "Abdul Aziz Kayes in the evening in Hajiganj", mNight: "Abdul Aziz Kayes in white clothes in front of a tall lit clock tower at night", mGate: "Abdul Aziz Kayes in a school uniform beside another person at a gate", mBoat: "Abdul Aziz Kayes sitting on a boat on a river in a woven hat"
       },
       cs: {
         back: "← All projects", crumb: "Case study", pending: "Pending repository audit and confirmation.",
@@ -342,7 +363,7 @@ window.SITE = {
       pjScript: "প্রকল্প", caseLink: "কেস স্টাডি →", catPending: "বিভাগ: নিশ্চিত করা হবে",
       liveLink: "লাইভ ↗", codeLink: "গিটহাব ↗", shotNeeded: "স্ক্রিনশট প্রয়োজন",
       cHead: "চলুন কাজ করি", cScript: "একসাথে",
-      cCopy: "প্রাসঙ্গিক আলোচনা ও সহযোগিতার জন্য উন্মুক্ত। আরও প্রোফাইল লিংক পাওয়ার পর যোগ হবে।",
+      cCopy: "প্রাসঙ্গিক আলোচনা ও সহযোগিতার জন্য উন্মুক্ত। নিচের যেকোনো মাধ্যমে যোগাযোগ করুন।", waText: "হোয়াটসঅ্যাপে বার্তা পাঠান", findMe: "যোগাযোগ",
       mail: "ইমেইল", tbp: "পরে দেওয়া হবে",
       phDesk: "ছবি প্রয়োজন: আপনার ডেস্ক বা ওয়ার্কস্পেস", phShot: "আসল স্ক্রিনশট বা কাজের ছবি প্রয়োজন",
       foot: "\"যাচাই বাকি\" চিহ্নিত অংশ এখনও যাচাই হয়নি। © আব্দুল আজিজ কায়েস",
@@ -350,7 +371,7 @@ window.SITE = {
         hero: "ফুলে ভরা বাগানবিলাসের সামনে হাসিমুখে আব্দুল আজিজ কায়েস", intro: "লেকের পাশে দাঁড়িয়ে আব্দুল আজিজ কায়েস", about: "সন্ধ্যার আকাশের দিকে তাকিয়ে আব্দুল আজিজ কায়েস",
         edu: "ঢাকা কলেজ সায়েন্স ক্লাবের প্রতীকের পাশে আব্দুল আজিজ কায়েস", s1: "বইয়ের দোকানে বই পড়ছেন আব্দুল আজিজ কায়েস", s2: "রেলস্টেশনের প্ল্যাটফর্মে আব্দুল আজিজ কায়েস",
         mWater: "ঝরনার সামনে বসে আছেন আব্দুল আজিজ কায়েস", mLamp: "গোধূলিতে রাস্তার বাতির পাশে আব্দুল আজিজ কায়েস", mJersey: "ঘাসের উপর বসে আব্দুল আজিজ কায়েস",
-        mKurta: "গোলাপি পাঞ্জাবিতে আব্দুল আজিজ কায়েস", mHaj: "সন্ধ্যায় হাজীগঞ্জে আব্দুল আজিজ কায়েস"
+        mKurta: "গোলাপি পাঞ্জাবিতে আব্দুল আজিজ কায়েস", mHaj: "সন্ধ্যায় হাজীগঞ্জে আব্দুল আজিজ কায়েস", mNight: "রাতে আলো জ্বলা উঁচু ঘড়ি-টাওয়ারের সামনে সাদা পোশাকে আব্দুল আজিজ কায়েস", mGate: "একটি ফটকের পাশে অন্য একজনের সাথে ইউনিফর্মে আব্দুল আজিজ কায়েস", mBoat: "নদীতে নৌকায় বুননের টুপি পরে বসে আব্দুল আজিজ কায়েস"
       },
       cs: {
         back: "← সব প্রকল্প", crumb: "কেস স্টাডি", pending: "রিপোজিটরি যাচাই ও নিশ্চিতকরণের অপেক্ষায়।",
