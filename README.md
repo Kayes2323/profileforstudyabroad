@@ -33,7 +33,7 @@ Set `contact.github`, `contact.linkedin`, `contact.email` in `js/content.js`. Un
 ## Deploy notes
 
 - GitHub Pages at a user/organisation root works as is. For a project site (`/repo-name/`), change the absolute `/css`, `/js`, `/assets` paths in `404.html` to include the repo name.
-- `og:image` is `assets/img/og.jpg`. Social networks need an absolute `https://` URL there, so replace it once the domain is known.
+- `og:image` and `og:url` point at `https://profileforstudyabroad.vercel.app`. If you move to your own domain, change those two lines in `index.html`.
 - Language is switched in the browser and remembered in `localStorage`. There is one URL for both languages, so `hreflang` tags are not used. Separate `/bn/` pages would be needed for that.
 - No analytics, backend, form service or API keys are used.
 
