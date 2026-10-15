@@ -121,14 +121,13 @@ html[lang="bn"] .s3 .hi{font:700 clamp(2rem,6vw,5rem)/1.1 var(--script)}
 .s5 .t{font-size:.82rem;margin-left:auto}
 @media(max-width:800px){.s5 .sc{position:relative;display:block;top:auto;right:auto;margin-top:-.5rem}.s5 .g{grid-template-columns:1fr}.s5 .items{align-items:flex-start;text-align:left}.s5 .hw{text-align:left}.s5 .t{margin-left:0}}
 
-/* 6 what I build */
-.s6 .big{text-align:right;padding-left:clamp(0px,6vw,80px)}
-.s6 .g{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
-.s6 .card{position:relative;aspect-ratio:16/10;min-width:0}
-.s6 .card .ph{position:absolute;inset:0}
-.s6 .lbl{position:absolute;right:12px;bottom:6px;font:400 clamp(1.8rem,4.6vw,3.6rem)/1 var(--script);color:#fff;text-shadow:3px 4px 8px rgba(0,0,0,.45);z-index:2}
-html[lang="bn"] .s6 .lbl{font:700 clamp(1.4rem,3.4vw,2.6rem)/1.2 var(--script)}
-@media(max-width:700px){.s6 .g{grid-template-columns:1fr}}
+/* 6 vision */
+.s6 .hw{display:block}
+.s6 .sc{right:6%;bottom:-30%}
+.s6 .g{display:grid;grid-template-columns:5fr 6fr;gap:clamp(18px,4vw,56px);margin-top:clamp(28px,4vw,48px);align-items:start}
+.s6 .pic{aspect-ratio:4/5;max-width:420px;box-shadow:10px 12px 0 var(--pink)}
+.s6 .tx p{margin:0 0 14px;max-width:62ch}
+@media(max-width:800px){.s6 .g{grid-template-columns:1fr}.s6 .sc{position:relative;display:block;right:auto;bottom:auto;margin-top:-.5rem}.s6 .pic{max-width:min(78%,340px)}}
 
 /* 7 index + projects */
 .s7 .sc{right:-12%;top:-22%}
@@ -238,3 +237,14 @@ html[lang="bn"] .blk h2{font:800 1.35rem/1.4 var(--head);text-transform:none}
 .phones .logo.fill{aspect-ratio:auto;height:100%;min-height:100%}
 .cb a.pill{text-decoration:none}
 @media(max-width:800px){.pj .logo.sm{max-width:200px;aspect-ratio:1/1}}
+
+.s3 .t{max-width:56ch}.s3 .t p{margin:0 0 10px}
+.s3 .note,.s4 .edn p{font-size:.8rem}
+.s3 .note{color:var(--muted);border-left:3px solid var(--pink);padding-left:10px}
+.s4 .edn{text-align:right;margin-left:auto;max-width:52ch}.s4 .edn p{margin:0 0 10px}
+.s2 .t b{display:block;margin-bottom:6px}
+@media(max-width:800px){.s4 .edn{text-align:left;margin-left:0}}
+.s6 .sc{bottom:-46%;right:2%}
+.s4 .edn .dots{display:flex;justify-content:flex-end}.s4 .edn b{display:block;margin-bottom:6px}
+.s3 .t .dots{display:flex}.s3 .t b{display:block}
+@media(max-width:800px){.s4 .edn .dots{justify-content:flex-start}}

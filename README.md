@@ -47,8 +47,9 @@ Set `contact.github`, `contact.linkedin`, `contact.email` in `js/content.js`. Un
 | `logo-move.jpg`, `logo-determind.jpg`, `logo-sondhan.jpg`, `logo-mino.jpg`, `logo-furqan.jpg` | Project logos, shown unchanged (resized only) | yes | owner supplied, confirm |
 | `projects/move/*.jpg` (4) | MOVE slide and case study | taken from `docs/screenshots` in the move-app repository | owner's own repository, confirm |
 | `projects/mino/*.jpg` (4), `projects/furqan/*.jpg` (3), `projects/sondhan/home.jpg` | Mino, Furqan, Sondhan slides and case studies | supplied by the owner (phone screenshots; the phone status bar was cropped off one) | owner supplied, confirm |
-| `projects/determind/login.jpg`, `projects/sondhan/request.jpg` | DeterMind and Sondhan slides | captured from the repositories running locally without a backend (signed out) | own code |
-| Signed-in DeterMind screens (to-do, dashboard, focus, Sigma) | DeterMind case study | **not supplied** (needs a Supabase login) | n/a |
+| `projects/determind/*.jpg` (4: home, tracker, focus, Sigma) | DeterMind slide and case study | supplied by the owner (browser and phone bars cropped off). Four more were withheld on purpose: they repeat these or show more personal habit data | owner supplied, confirm |
+| `projects/sondhan/request.jpg` | Sondhan slide | captured from the repository running locally without a backend | own code |
+| `vision.jpg` | "Where I want to go" | yes | owner supplied, confirm |
 | Higher-resolution Mino logo | Mino tile (current file is 216 px) | **needed** | n/a |
 | Personal logo / monogram | Header, favicon | **not received**; `favicon.svg` is a neutral placeholder dot | n/a |
 | `og.jpg` | Social preview (screenshot of the hero) | generated | n/a |

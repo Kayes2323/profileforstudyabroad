@@ -111,11 +111,12 @@ window.SITE = {
         bn: "\"নিজের পথ ঠিক করো। নিজের দিন জয় করো।\" শিক্ষার্থী এক জায়গায় দিনের পরিকল্পনা করে, রুটিন বানায়, মনোযোগ দেয় এবং অগ্রগতি দেখে।"
       },
       implemented: [
+        { en: "Home with a personal goal, daily score, streak, exam countdown and an AI Coach analysis of the day", bn: "ব্যক্তিগত লক্ষ্য, দৈনিক স্কোর, স্ট্রিক, পরীক্ষার কাউন্টডাউন ও দিনের এআই কোচ বিশ্লেষণসহ হোম" },
+        { en: "A tracker with custom columns, a monthly report table and trend charts", bn: "কাস্টম কলাম, মাসিক রিপোর্ট টেবিল ও ট্রেন্ড চার্টসহ ট্র্যাকার" },
         { en: "To-do and daily routine planning", bn: "টু-ডু ও দৈনিক রুটিন পরিকল্পনা" },
-        { en: "A progress dashboard with charts", bn: "চার্টসহ অগ্রগতির ড্যাশবোর্ড" },
-        { en: "Focus sessions and a leaderboard", bn: "ফোকাস সেশন ও লিডারবোর্ড" },
-        { en: "Sign-in and a profile, with data stored in Supabase", bn: "সাইন-ইন ও প্রোফাইল, ডেটা সংরক্ষিত সুপাবেসে" },
-        { en: "Sigma, an AI assistant, served through a server route that only signed-in users can call", bn: "সিগমা নামের এআই সহকারী, একটি সার্ভার রুটের মাধ্যমে যেটা শুধু সাইন-ইন করা ব্যবহারকারী ডাকতে পারে" },
+        { en: "A focus timer with Pomodoro, Deep Work and short modes, plus a blocker tab", bn: "পোমোডোরো, ডিপ ওয়ার্ক ও শর্ট মোডসহ ফোকাস টাইমার, আর একটি ব্লকার ট্যাব" },
+        { en: "Sigma, an AI mentor chat, served through a server route that only signed-in users can call", bn: "সিগমা নামের এআই মেন্টর চ্যাট, একটি সার্ভার রুটের মাধ্যমে যেটা শুধু সাইন-ইন করা ব্যবহারকারী ডাকতে পারে" },
+        { en: "Sign-in, a profile and a leaderboard, with data stored in Supabase", bn: "সাইন-ইন, প্রোফাইল ও লিডারবোর্ড, ডেটা সংরক্ষিত সুপাবেসে" },
         { en: "Installable as a PWA, with a notification hook and a service worker", bn: "PWA হিসেবে ইনস্টল করা যায়, নোটিফিকেশন হুক ও সার্ভিস ওয়ার্কার সহ" }
       ],
       planned: [],
@@ -125,7 +126,10 @@ window.SITE = {
       },
       tech: ["React", "Vite", "Supabase", "Zustand", "React Router", "Recharts", "Framer Motion", "Tailwind CSS", "Groq API"],
       shots: [
-        { ar: 0.462, src: "assets/img/projects/determind/login.jpg", alt: { en: "DeterMind sign-in screen", bn: "ডিটারমাইন্ডের সাইন-ইন স্ক্রিন" } }
+        { ar: 0.529, src: "assets/img/projects/determind/home.jpg", alt: { en: "DeterMind home with the goal, daily score, streak and AI Coach analysis", bn: "লক্ষ্য, দৈনিক স্কোর, স্ট্রিক ও এআই কোচ বিশ্লেষণসহ ডিটারমাইন্ডের হোম" } },
+        { ar: 0.529, src: "assets/img/projects/determind/tracker.jpg", alt: { en: "DeterMind tracker with monthly totals for custom columns", bn: "কাস্টম কলামের মাসিক যোগফলসহ ডিটারমাইন্ডের ট্র্যাকার" } },
+        { ar: 0.494, src: "assets/img/projects/determind/focus.jpg", alt: { en: "DeterMind focus timer set to a 25-minute Pomodoro", bn: "২৫ মিনিটের পোমোডোরো সেট করা ডিটারমাইন্ডের ফোকাস টাইমার" } },
+        { ar: 0.529, src: "assets/img/projects/determind/sigma.jpg", alt: { en: "Sigma, the DeterMind AI mentor, answering a question in Bangla", bn: "বাংলায় প্রশ্নের উত্তর দিচ্ছে ডিটারমাইন্ডের এআই মেন্টর সিগমা" } }
       ],
       challenges: {
         en: "The latest commit records moving the AI calls to a server route so the API key never ships to the browser. The route also checks that the caller has a valid session.",
@@ -135,7 +139,7 @@ window.SITE = {
         en: "In active development, as the README says. The AI assistant needs a server-side key to work.",
         bn: "README অনুযায়ী সক্রিয় উন্নয়নে আছে। এআই সহকারী চলতে সার্ভার-সাইড কী লাগে।"
       },
-      basis: ["README", "src/pages and src/store", "api/ai.js", "package.json", "sign-in screen captured from the repository running locally"],
+      basis: ["README", "src/pages and src/store", "api/ai.js", "package.json", "screenshots of the live app supplied by me"],
       links: { demo: "https://deter-mind.vercel.app", repo: "https://github.com/Kayes2323/DeterMind" },
       related: ["move", "sondhan"]
     },
@@ -292,10 +296,21 @@ window.SITE = {
       hCopy: "I'm Abdul Aziz Kayes, a product builder from Hajiganj, Chandpur, Bangladesh. I explore how technology can address practical problems, and I learn by turning ideas into working digital products.",
       ctaWork: "Explore My Work", ctaStory: "My Story",
       iHead: "Introduction", iScript: "Intro",
-      iP1: "My journey is still unfolding. I became interested in technology as a way to turn ideas into something practical. Through independent projects, I have been exploring problems across community services, education, fitness, and digital applications.",
-      iP2: "Each project gives me a chance to learn, test assumptions, and understand what it takes to build something useful. I want to continue developing my skills and create products that address meaningful problems.",
-      aHi: "Hello, I'm", aName: "Abdul Aziz<br>Kayes", aMe: "About Me",
-      aCopy: "Product builder, web developer and aspiring entrepreneur. I use AI-assisted development tools in my workflow, and each case study will say clearly which parts are my own decisions and which were assisted.",
+      introLabel: "About Me",
+      introP: "I’m Abdul Aziz Kayes, from Hajiganj, Chandpur, Bangladesh. I’m a curious learner with a strong interest in technology, problem-solving, and turning ideas into practical solutions. I believe knowledge becomes most valuable when it can be applied to solve problems that matter in the real world.",
+      eduLabel: "My Education",
+      eduP1: "My educational journey began at Ahmadia Kamil Madrasa in Hajiganj, where I studied in the Science stream and completed my Secondary School Certificate (SSC) with a GPA of 5.00. I then continued my studies in the Science stream at Dhaka College, completing my Higher Secondary Certificate (HSC) in 2024 with a GPA of 5.00.",
+      eduP2: "My science background helped shape my analytical thinking and encouraged me to understand how things work. Over time, my interests increasingly moved toward technology, software, and building useful products.",
+      aMe: "What I Do Today",
+      todayP1: "I currently explore software development and digital product building as ways to address real-world problems. My work involves developing ideas, planning solutions, designing user experiences, building applications, and using AI and other technologies where they can add value.",
+      todayP2: "Through projects such as Sondhan, MOVE, Furqan, and Vocabulary, I am learning not only how to build digital products, but also how to identify problems, understand user needs, and turn ideas into working solutions. Each project is an opportunity to experiment, improve my skills, and learn through practice.",
+      aCopy: "I use AI-assisted development tools in my workflow. Each case study says clearly which parts are my own decisions and which were assisted.",
+      vHead: "Where I Want to Go",
+      vScript: "Ahead",
+      vP1: "Although my journey currently focuses on software, my long-term vision extends beyond software alone. I want to bring software and hardware together to solve problems in the physical world.",
+      vP2: "I’m interested in technologies that combine software intelligence with physical systems—from automation and smart devices to robotics and other practical innovations. I want to explore how software can make hardware more capable, responsive, and useful in everyday life.",
+      vP3: "In the long run, I hope to combine technology, business, and innovative thinking to build products that address meaningful needs. I still have a great deal to learn, and I see that as part of the journey. My focus is to keep learning, building, experimenting, and gradually developing the skills needed to tackle more complex real-world challenges.",
+      aHi: "Hello, I'm", aName: "Abdul Aziz<br>Kayes", aCopy: "Product builder, web developer and aspiring entrepreneur. I use AI-assisted development tools in my workflow, and each case study will say clearly which parts are my own decisions and which were assisted.",
       mHead: "Beyond code", mScript: "Moments", mCopy: "A few moments from outside the screen.",
       eHead: "Education", hsc: "Higher Secondary Certificate (HSC), 2024", hscS: "Dhaka College", gpa: "GPA 5.00",
       ssc: "Secondary School Certificate (SSC)", sscS: "Ahmadia Kamil Madrasa, Hajiganj, Chandpur",
@@ -308,7 +323,6 @@ window.SITE = {
         ["UI/UX and responsive design", "Real-project examples: pending audit"],
         ["Deployment and tools", "Verified in code: Vercel, PWA service workers, Git"]
       ],
-      bHead: "What I build", bL1: "Product Building", bL2: "Web Development",
       pHead: "Portfolio", pScript: "Projects",
       pIntro: "Five projects. Details come from each repository's README, code and docs. Live links are as reported there.",
       pjScript: "Project", caseLink: "Case study →", catPending: "Category: to be confirmed",
@@ -322,7 +336,7 @@ window.SITE = {
         hero: "Abdul Aziz Kayes smiling in front of a flowering bougainvillea", intro: "Abdul Aziz Kayes standing by a lake", about: "Abdul Aziz Kayes looking up at the evening sky",
         edu: "Abdul Aziz Kayes beside the Dhaka College Science Club emblem", s1: "Abdul Aziz Kayes reading a book in a bookshop", s2: "Abdul Aziz Kayes at a railway platform",
         mWater: "Abdul Aziz Kayes sitting in front of a waterfall", mLamp: "Abdul Aziz Kayes beside a street lamp at dusk", mJersey: "Abdul Aziz Kayes sitting on grass",
-        mKurta: "Abdul Aziz Kayes in a pink kurta", mHaj: "Abdul Aziz Kayes in the evening in Hajiganj", mNight: "Abdul Aziz Kayes in white clothes in front of a tall lit clock tower at night", mGate: "Abdul Aziz Kayes in a school uniform beside another person at a gate", mBoat: "Abdul Aziz Kayes sitting on a boat on a river in a woven hat"
+        vision: "Abdul Aziz Kayes in profile, looking ahead on a street", mKurta: "Abdul Aziz Kayes in a pink kurta", mHaj: "Abdul Aziz Kayes in the evening in Hajiganj", mNight: "Abdul Aziz Kayes in white clothes in front of a tall lit clock tower at night", mGate: "Abdul Aziz Kayes in a school uniform beside another person at a gate", mBoat: "Abdul Aziz Kayes sitting on a boat on a river in a woven hat"
       },
       cs: {
         back: "← All projects", crumb: "Case study", pending: "Pending repository audit and confirmation.",
@@ -341,10 +355,21 @@ window.SITE = {
       hCopy: "আমি আব্দুল আজিজ কায়েস, হাজীগঞ্জ, চাঁদপুর, বাংলাদেশের একজন প্রোডাক্ট বিল্ডার। বাস্তব সমস্যার সমাধানে প্রযুক্তি কীভাবে কাজে লাগতে পারে তা খুঁজে দেখি, আর ধারণাকে কাজের ডিজিটাল পণ্যে রূপ দিয়ে শিখি।",
       ctaWork: "আমার কাজ দেখুন", ctaStory: "আমার গল্প",
       iHead: "ভূমিকা", iScript: "শুরুর কথা",
-      iP1: "আমার যাত্রা এখনও চলছে। প্রযুক্তিতে আগ্রহী হয়েছি কারণ এটি ধারণাকে কাজে লাগার মতো কিছুতে রূপ দিতে সাহায্য করে। নিজের উদ্যোগে করা প্রকল্পগুলোর মাধ্যমে কমিউনিটি সেবা, শিক্ষা, ফিটনেস ও ডিজিটাল অ্যাপ্লিকেশনের নানা সমস্যা নিয়ে কাজ করছি।",
-      iP2: "প্রতিটি প্রকল্প আমাকে শেখার, অনুমান পরীক্ষা করার এবং কাজের মতো কিছু বানাতে কী লাগে তা বোঝার সুযোগ দেয়। আমি দক্ষতা বাড়াতে চাই এবং অর্থবহ সমস্যার সমাধান করে এমন পণ্য তৈরি করতে চাই।",
-      aHi: "আমি", aName: "আব্দুল আজিজ<br>কায়েস", aMe: "আমার পরিচিতি",
-      aCopy: "প্রোডাক্ট বিল্ডার, ওয়েব ডেভেলপার এবং উদ্যোক্তা হতে আগ্রহী। কাজের ধাপে আমি এআই-সহায়ক টুল ব্যবহার করি, আর প্রতিটি কেস স্টাডিতে স্পষ্ট করে দেখানো হবে কোনটা আমার নিজের সিদ্ধান্ত এবং কোনটাতে এআই সহায়তা করেছে।",
+      introLabel: "আমার পরিচয়",
+      introP: "আমি আবদুল আজিজ কায়েস, বাংলাদেশের চাঁদপুর জেলার হাজীগঞ্জ থেকে আসা একজন কৌতূহলী শিক্ষার্থী ও প্রযুক্তিপ্রেমী। নতুন কিছু শেখা, সমস্যার ভিন্ন সমাধান খোঁজা এবং নিজের ধারণাগুলোকে বাস্তবে রূপ দেওয়ার প্রতি আমার আগ্রহ রয়েছে। আমি বিশ্বাস করি, শেখার প্রকৃত মূল্য তখনই তৈরি হয়, যখন সেই জ্ঞান দিয়ে মানুষের জীবনের কোনো বাস্তব সমস্যার সমাধান করা যায়।",
+      eduLabel: "আমার শিক্ষাজীবন",
+      eduP1: "আমার শিক্ষাজীবনের শুরু মাদ্রাসায়। আমি হাজীগঞ্জের আহমদিয়া কামিল মাদ্রাসা থেকে বিজ্ঞান বিভাগে মাধ্যমিক শিক্ষা সম্পন্ন করি এবং SSC পরীক্ষায় GPA 5.00 অর্জন করি। এরপর বিজ্ঞান বিভাগের শিক্ষার্থী হিসেবে ঢাকা কলেজে উচ্চমাধ্যমিকে ভর্তি হই। ২০২৪ সালে HSC পরীক্ষায় সেখান থেকেও GPA 5.00 অর্জন করি।",
+      eduP2: "বিজ্ঞান বিভাগে পড়াশোনা করার অভিজ্ঞতা আমাকে বিশ্লেষণধর্মীভাবে চিন্তা করতে, কোনো বিষয়কে যুক্তি দিয়ে বুঝতে এবং সমস্যার সমাধান খুঁজতে উৎসাহিত করেছে। সময়ের সঙ্গে আমার আগ্রহ প্রযুক্তি, সফটওয়্যার এবং নতুন কিছু তৈরি করার দিকে আরও গভীর হয়েছে।",
+      aMe: "বর্তমানে আমি যা করছি",
+      todayP1: "বর্তমানে আমি সফটওয়্যার ও ডিজিটাল পণ্য তৈরির মাধ্যমে বাস্তব সমস্যার সমাধান খোঁজার চেষ্টা করছি। বিভিন্ন প্রজেক্টের ধারণা তৈরি, পরিকল্পনা, ডিজাইন, ডেভেলপমেন্ট এবং প্রয়োজন অনুযায়ী AI-সহ বিভিন্ন প্রযুক্তির ব্যবহার করে সেগুলোকে কার্যকর পণ্যে রূপ দেওয়ার অভিজ্ঞতা অর্জন করছি।",
+      todayP2: "Sondhan, MOVE, Furqan, Vocabulary এবং অন্যান্য প্রজেক্টে কাজ করার মাধ্যমে আমি শুধু কোড লেখা নয়, বরং একটি সমস্যা চিহ্নিত করা, ব্যবহারকারীর প্রয়োজন বোঝা এবং সেই প্রয়োজন অনুযায়ী সমাধান তৈরি করার প্রক্রিয়াও শিখছি। প্রতিটি প্রজেক্ট আমার জন্য নতুন কিছু শেখার এবং নিজের ধারণাকে বাস্তবে পরীক্ষা করার সুযোগ।",
+      aCopy: "কাজের ধাপে আমি এআই-সহায়ক টুল ব্যবহার করি। প্রতিটি কেস স্টাডিতে স্পষ্ট করে দেখানো হয়েছে কোনটা আমার নিজের সিদ্ধান্ত এবং কোনটাতে এআই সহায়তা করেছে।",
+      vHead: "আমার ভবিষ্যৎ লক্ষ্য",
+      vScript: "সামনে",
+      vP1: "সফটওয়্যার দিয়ে কাজ শুরু করলেও আমার ভবিষ্যৎ লক্ষ্য শুধু সফটওয়্যার ডেভেলপমেন্টের মধ্যে সীমাবদ্ধ নয়। আমি ভবিষ্যতে Software ও Hardware-এর সমন্বয়ে এমন প্রযুক্তি তৈরি করতে চাই, যা ডিজিটাল জগতের বাইরেও বাস্তব জীবনের সমস্যার সমাধান করতে পারবে।",
+      vP2: "আমি এমন সমাধান নিয়ে কাজ করতে আগ্রহী, যেখানে সফটওয়্যার কোনো সিস্টেমকে বুদ্ধিমান করে তুলবে, আর হার্ডওয়্যার সেই বুদ্ধিমত্তাকে বাস্তব জগতে কাজে লাগাবে। এটি হতে পারে অটোমেশন, স্মার্ট ডিভাইস, রোবোটিকস কিংবা মানুষের দৈনন্দিন জীবনকে সহজ করে এমন কোনো প্রযুক্তিগত উদ্ভাবন।",
+      vP3: "দীর্ঘমেয়াদে আমার লক্ষ্য হলো প্রযুক্তি, ব্যবসা এবং উদ্ভাবনী চিন্তাকে একত্র করে প্রয়োজনীয় ও কার্যকর পণ্য তৈরি করা। আমি জানি, এই পথে শেখার অনেক কিছু বাকি। তাই আমি ধাপে ধাপে নিজের দক্ষতা বাড়াতে, নতুন প্রযুক্তি বুঝতে এবং ছোট ছোট বাস্তব সমস্যার সমাধান তৈরি করতে চাই—যাতে একদিন আরও জটিল ও গুরুত্বপূর্ণ সমস্যার সমাধানে অবদান রাখতে পারি।",
+      aHi: "আমি", aName: "আব্দুল আজিজ<br>কায়েস", aCopy: "প্রোডাক্ট বিল্ডার, ওয়েব ডেভেলপার এবং উদ্যোক্তা হতে আগ্রহী। কাজের ধাপে আমি এআই-সহায়ক টুল ব্যবহার করি, আর প্রতিটি কেস স্টাডিতে স্পষ্ট করে দেখানো হবে কোনটা আমার নিজের সিদ্ধান্ত এবং কোনটাতে এআই সহায়তা করেছে।",
       mHead: "কোডের বাইরে", mScript: "মুহূর্ত", mCopy: "পর্দার বাইরের কিছু মুহূর্ত।",
       eHead: "শিক্ষা", hsc: "উচ্চ মাধ্যমিক সার্টিফিকেট (এইচএসসি), ২০২৪", hscS: "ঢাকা কলেজ", gpa: "জিপিএ ৫.০০",
       ssc: "মাধ্যমিক স্কুল সার্টিফিকেট (এসএসসি)", sscS: "আহমাদিয়া কামিল মাদরাসা, হাজীগঞ্জ, চাঁদপুর",
@@ -357,7 +382,6 @@ window.SITE = {
         ["ইউআই/ইউএক্স ও রেসপনসিভ ডিজাইন", "বাস্তব প্রকল্পের উদাহরণ: যাচাই বাকি"],
         ["ডিপ্লয়মেন্ট ও টুল", "কোডে যাচাইকৃত: Vercel, PWA সার্ভিস ওয়ার্কার, Git"]
       ],
-      bHead: "যা বানাই", bL1: "পণ্য নির্মাণ", bL2: "ওয়েব ডেভেলপমেন্ট",
       pHead: "পোর্টফোলিও", pScript: "প্রকল্প",
       pIntro: "পাঁচটি প্রকল্প। বিস্তারিত প্রতিটি রিপোজিটরির README, কোড ও ডকুমেন্ট থেকে নেওয়া। লাইভ লিংক সেখানে উল্লেখ অনুযায়ী।",
       pjScript: "প্রকল্প", caseLink: "কেস স্টাডি →", catPending: "বিভাগ: নিশ্চিত করা হবে",
@@ -371,7 +395,7 @@ window.SITE = {
         hero: "ফুলে ভরা বাগানবিলাসের সামনে হাসিমুখে আব্দুল আজিজ কায়েস", intro: "লেকের পাশে দাঁড়িয়ে আব্দুল আজিজ কায়েস", about: "সন্ধ্যার আকাশের দিকে তাকিয়ে আব্দুল আজিজ কায়েস",
         edu: "ঢাকা কলেজ সায়েন্স ক্লাবের প্রতীকের পাশে আব্দুল আজিজ কায়েস", s1: "বইয়ের দোকানে বই পড়ছেন আব্দুল আজিজ কায়েস", s2: "রেলস্টেশনের প্ল্যাটফর্মে আব্দুল আজিজ কায়েস",
         mWater: "ঝরনার সামনে বসে আছেন আব্দুল আজিজ কায়েস", mLamp: "গোধূলিতে রাস্তার বাতির পাশে আব্দুল আজিজ কায়েস", mJersey: "ঘাসের উপর বসে আব্দুল আজিজ কায়েস",
-        mKurta: "গোলাপি পাঞ্জাবিতে আব্দুল আজিজ কায়েস", mHaj: "সন্ধ্যায় হাজীগঞ্জে আব্দুল আজিজ কায়েস", mNight: "রাতে আলো জ্বলা উঁচু ঘড়ি-টাওয়ারের সামনে সাদা পোশাকে আব্দুল আজিজ কায়েস", mGate: "একটি ফটকের পাশে অন্য একজনের সাথে ইউনিফর্মে আব্দুল আজিজ কায়েস", mBoat: "নদীতে নৌকায় বুননের টুপি পরে বসে আব্দুল আজিজ কায়েস"
+        vision: "রাস্তায় সামনের দিকে তাকিয়ে পাশ ফেরা আব্দুল আজিজ কায়েস", mKurta: "গোলাপি পাঞ্জাবিতে আব্দুল আজিজ কায়েস", mHaj: "সন্ধ্যায় হাজীগঞ্জে আব্দুল আজিজ কায়েস", mNight: "রাতে আলো জ্বলা উঁচু ঘড়ি-টাওয়ারের সামনে সাদা পোশাকে আব্দুল আজিজ কায়েস", mGate: "একটি ফটকের পাশে অন্য একজনের সাথে ইউনিফর্মে আব্দুল আজিজ কায়েস", mBoat: "নদীতে নৌকায় বুননের টুপি পরে বসে আব্দুল আজিজ কায়েস"
       },
       cs: {
         back: "← সব প্রকল্প", crumb: "কেস স্টাডি", pending: "রিপোজিটরি যাচাই ও নিশ্চিতকরণের অপেক্ষায়।",
