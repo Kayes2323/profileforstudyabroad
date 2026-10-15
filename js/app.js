@@ -53,33 +53,34 @@
     $('#skl').innerHTML = U('skills').map(function (s) {
       return '<div><div class="dots"><i></i><i></i><i></i></div><h3>' + esc(s[0]) + '</h3><div class="t">' + esc(s[1]) + '</div></div>';
     }).join('');
-    $('#pnames').innerHTML = S.projects.map(function (p) { return '<a href="#pj-' + p.slug + '">' + esc(p.name) + '</a>'; }).join('');
-
-    // project index: first real screenshot on the left, all logos on the right
-    var withShot = S.projects.filter(function (p) { return p.shots && p.shots.length; })[0];
-    $('#idxl').innerHTML = withShot ? shotImg(withShot.shots[0], withShot, 'tall') : placeholder('tall');
-    $('#idxr').innerHTML = '<div class="logos">' + S.projects.map(function (p) {
-      return '<a href="#pj-' + p.slug + '" class="lk" aria-label="' + esc(p.name) + '">' + logoTile(p, 'sq') + '<span>' + esc(p.name) + '</span></a>';
-    }).join('') + '</div>';
+    // index: one clean row per project (number, logo, name, category, status)
+    $('#idx').innerHTML = S.projects.map(function (p, i) {
+      return '<a class="row" href="#pj-' + p.slug + '"><span class="no">' + num(i + 1) + '</span>' + logoTile(p, 'ix') +
+        '<span class="nm"><b>' + esc(p.name) + '</b><small>' + esc(L(p.category) || U('catPending')) + '</small></span>' +
+        '<span class="chip fill st">' + esc(L(S.statusLabels[p.status])) + '</span><span class="go" aria-hidden="true">↓</span></a>';
+    }).join('');
 
     $('#pj').innerHTML = S.projects.map(function (p, i) {
-      var a = i % 2 === 0, hasShot = p.shots && p.shots.length;
-      var portrait = hasShot && p.shots[0].ar && p.shots[0].ar < 0.9;
-      var ph = hasShot ? p.shots.filter(function (s) { return s.ar && s.ar < 0.9; }).slice(0, 3) : [];
-      var fill = ph.length && ph.length < 3 ? '<div class="logo fill" style="--lbg:' + esc(p.logoBg) + ';--lw:' + (p.logoW || 560) + 'px;grid-column:span ' + (3 - ph.length) + '"><img src="' + esc(p.logo) + '" alt="' + esc(p.name) + ' logo"></div>' : '';
-      var main = !hasShot ? logoTile(p, 'm') : portrait
-        ? '<div class="phones">' + ph.map(function (s) { return shotImg(s, p, ''); }).join('') + fill + '</div>'
-        : shotImg(p.shots[0], p, 'm');
-      var small = hasShot ? (fill ? '' : logoTile(p, 'sm')) : placeholder('sm', 'shotNeeded');
-            var cat = L(p.category) || U('catPending');
-      var chips = '<div class="chips"><span class="chip fill">' + esc(L(S.statusLabels[p.status])) + '</span><span class="chip">' + esc(cat) + '</span></div>' +
-        '<div class="chips">' + (p.tech || []).map(function (t) { return '<span class="chip">' + esc(t) + '</span>'; }).join('') + '</div>';
-      var info = '<div class="col"><div class="t">' + chips + '<p>' + esc(L(p.summary) || U('cs.pending')) + '</p></div>' + linkBtns(p) +
-        '<a class="more" href="project.html#' + p.slug + '">' + esc(U('caseLink')) + '</a>' + small + '</div>';
-      return '<section class="slide pj ' + (a ? 'a' : 'b') + '" id="pj-' + p.slug + '">' +
-        '<i class="bl ' + (a ? 'r' : 'pe') + '" style="--x:' + (a ? 74 : -8) + '%;--y:-8%;--s:26%"></i><i class="bl pk" style="--x:' + (a ? 90 : 60) + '%;--y:60%;--s:20%"></i>' +
+      var shots = (p.shots || []).filter(function (s) { return s.ar && s.ar < 0.9; }).slice(0, 4);
+      var others = (p.shots || []).filter(function (s) { return !(s.ar && s.ar < 0.9); }).slice(0, 2);
+      var vis;
+      if (shots.length) {
+        var cols = shots.map(function (s) { return s.ar + 'fr'; }).join(' ');
+        vis = '<div class="phones n' + shots.length + '" style="--cols:' + cols + '">' + shots.map(function (s) { return shotImg(s, p, ''); }).join('') + '</div>';
+      } else if (others.length) { vis = shotImg(others[0], p, 'm'); }
+      else { vis = placeholder('m', 'shotNeeded'); }
+      var feats = (p.implemented || []).slice(0, 3).map(function (f) { return '<li>' + esc(L(f)) + '</li>'; }).join('');
+      var cat = L(p.category) || U('catPending');
+      return '<section class="slide pj" id="pj-' + p.slug + '">' +
+        '<i class="bl ' + (i % 2 ? 'pe' : 'r') + '" style="--x:' + (i % 2 ? -8 : 78) + '%;--y:-8%;--s:26%"></i><i class="bl pk" style="--x:' + (i % 2 ? 62 : 90) + '%;--y:70%;--s:20%"></i>' +
         '<div class="hw"><h2 class="big">' + esc(p.name) + '</h2><span class="sc" aria-hidden="true">' + esc(U('pjScript')) + ' ' + num(i + 1) + '</span></div>' +
-        '<div class="g">' + (a ? main + info : info + main) + '</div></section>';
+        '<div class="pg"><div class="pinfo">' +
+          '<div class="phead">' + logoTile(p, 'hd') + '<div class="chips"><span class="chip fill">' + esc(L(S.statusLabels[p.status])) + '</span><span class="chip">' + esc(cat) + '</span></div></div>' +
+          '<p class="sum">' + esc(L(p.summary) || U('cs.pending')) + '</p>' +
+          (feats ? '<div class="mono2">' + esc(U('highlights')) + '</div><ul class="hl">' + feats + '</ul>' : '') +
+          '<div class="chips">' + (p.tech || []).map(function (t) { return '<span class="chip">' + esc(t) + '</span>'; }).join('') + '</div>' +
+          linkBtns(p) + '<a class="more" href="project.html#' + p.slug + '">' + esc(U('caseLink')) + '</a>' +
+        '</div><div class="pvis">' + vis + '</div></div></section>';
     }).join('');
     renderContact();
   }

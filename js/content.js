@@ -46,104 +46,9 @@ window.SITE = {
     deployed: { en: "Status: live, as reported in the repository", bn: "অবস্থা: চালু, রিপোজিটরির তথ্য অনুযায়ী" }
   },
 
-  /* Order follows the owner's choice. Add a project by copying one entry. Slugs are used in project.html#slug.
+  /* Order follows the owner's choice: Sondhan, Mino, MOVE, DeterMind, Furqan. Add a project by copying one entry. Slugs are used in project.html#slug.
      logo: supplied brand logo, shown unchanged on logoBg. logoW caps its width for low-resolution files. */
   projects: [
-    {
-      slug: "move", name: "MOVE", aka: null, status: "active",
-      logo: "assets/img/logo-move.jpg", logoBg: "#000000",
-      category: { en: "Fitness", bn: "ফিটনেস" },
-      summary: {
-        en: "A running app that turns the distance you actually run into progress along real routes across Bangladesh, starting from Dhaka.",
-        bn: "বাস্তবে যত দূর দৌড়ান সেটাকে বাংলাদেশের আসল রুটে এগিয়ে যাওয়ায় রূপ দেওয়া একটি রানিং অ্যাপ, যাত্রা শুরু ঢাকা থেকে।"
-      },
-      problem: null, users: null,
-      concept: {
-        en: "Every kilometre recorded by GPS moves you forward along a real route, one real town at a time. A Territory mode rewards exploring real streets on foot (kilometres do not count towards it), piloted for Mohammadpur in Dhaka.",
-        bn: "জিপিএসে মাপা প্রতিটি কিলোমিটার আপনাকে একটি আসল রুটে, একটি করে আসল শহর পেরিয়ে এগিয়ে নেয়। টেরিটরি মোডে পায়ে হেঁটে আসল রাস্তা ঘুরে দেখলে অগ্রগতি হয় (এতে কিলোমিটার গোনা হয় না), আপাতত ঢাকার মোহাম্মদপুরে পরীক্ষামূলকভাবে।"
-      },
-      implemented: [
-        { en: "GPS run and walk tracking on a live map", bn: "লাইভ ম্যাপে জিপিএস রান ও ওয়াক ট্র্যাকিং" },
-        { en: "Journeys from Dhaka to places such as Cox's Bazar, Sylhet and Khulna, with real towns as checkpoints", bn: "ঢাকা থেকে কক্সবাজার, সিলেট, খুলনার মতো গন্তব্যে যাত্রা, আসল শহরগুলো চেকপয়েন্ট" },
-        { en: "Run results, a leaderboard and shareable cards", bn: "রানের ফলাফল, লিডারবোর্ড ও শেয়ার করার কার্ড" },
-        { en: "Onboarding, login and a profile", bn: "অনবোর্ডিং, লগইন ও প্রোফাইল" },
-        { en: "Territory pilot: explore the real streets of Mohammadpur to conquer it, using an OpenStreetMap-based map mask", bn: "টেরিটরি পাইলট: মোহাম্মদপুরের আসল রাস্তা ঘুরে এলাকাটি জয় করা, ওপেনস্ট্রিটম্যাপভিত্তিক ম্যাপ মাস্ক দিয়ে" },
-        { en: "Every GPS point is saved on the device first and synced later, so a crash or lost signal does not lose a run", bn: "প্রতিটি জিপিএস পয়েন্ট আগে ডিভাইসে সেভ হয়, পরে সিঙ্ক হয়, তাই ক্র্যাশ বা সিগন্যাল গেলেও রান হারায় না" }
-      ],
-      planned: [
-        { en: "Reliable background tracking through a native Capacitor shell (its configuration is in the repository)", bn: "নেটিভ ক্যাপাসিটর শেলের মাধ্যমে নির্ভরযোগ্য ব্যাকগ্রাউন্ড ট্র্যাকিং (কনফিগারেশন রিপোজিটরিতে আছে)" }
-      ],
-      role: {
-        en: "The README credits me as the builder. The repository contains CLAUDE.md and AGENTS.md files, so AI coding tools were part of the workflow. The exact split between my decisions and AI-assisted work is still to be added.",
-        bn: "README-তে আমাকে নির্মাতা হিসেবে উল্লেখ করা আছে। রিপোজিটরিতে CLAUDE.md ও AGENTS.md ফাইল আছে, অর্থাৎ কাজে এআই কোডিং টুল ব্যবহৃত হয়েছে। আমার সিদ্ধান্ত আর এআই-সহায়তার সুনির্দিষ্ট ভাগ এখনও যোগ হয়নি।"
-      },
-      tech: ["Next.js", "TypeScript", "Firebase", "Leaflet", "Tailwind CSS", "Capacitor"],
-      shots: [
-        { ar: 0.467, src: "assets/img/projects/move/hub-progress.jpg", alt: { en: "MOVE Territory screen showing Mohammadpur 50 percent explored", bn: "মোহাম্মদপুর ৫০ শতাংশ ঘোরা দেখাচ্ছে এমন MOVE-এর টেরিটরি স্ক্রিন" } },
-        { ar: 0.487, src: "assets/img/projects/move/hub-start.jpg", alt: { en: "MOVE Territory screen before choosing Mohammadpur", bn: "মোহাম্মদপুর বেছে নেওয়ার আগের MOVE-এর টেরিটরি স্ক্রিন" } },
-        { ar: 0.487, src: "assets/img/projects/move/hub-conquered.jpg", alt: { en: "MOVE Territory screen with Mohammadpur conquered", bn: "মোহাম্মদপুর জয় হয়েছে এমন MOVE-এর টেরিটরি স্ক্রিন" } },
-        { ar: 0.8, src: "assets/img/projects/move/routes-share.jpg", alt: { en: "MOVE share card for a Dhaka to Chandpur journey", bn: "ঢাকা থেকে চাঁদপুর যাত্রার MOVE শেয়ার কার্ড" } }
-      ],
-      challenges: {
-        en: "Browsers stop delivering GPS positions when the screen locks, so the repository documents two tracking modes: the web app today, and a native Capacitor shell with background location as the way to fix it.",
-        bn: "স্ক্রিন লক হলে ব্রাউজার জিপিএস পজিশন দেওয়া বন্ধ করে দেয়, তাই রিপোজিটরিতে দুটি ট্র্যাকিং মোড লেখা আছে: এখনকার ওয়েব অ্যাপ, আর সমাধান হিসেবে ব্যাকগ্রাউন্ড লোকেশনসহ নেটিভ ক্যাপাসিটর শেল।"
-      },
-      limitations: {
-        en: "In active development, as the README says. Background tracking on the web is limited by the browser. Territory is a pilot for one area.",
-        bn: "README অনুযায়ী সক্রিয় উন্নয়নে আছে। ওয়েবে ব্যাকগ্রাউন্ড ট্র্যাকিং ব্রাউজারের সীমার মধ্যে। টেরিটরি শুধু একটি এলাকায় পাইলট।"
-      },
-      basis: ["README", "app routes and source code", "docs/TERRITORY.md", "docs/NATIVE.md", "docs/screenshots"],
-      links: { demo: "https://move-app-h2me.vercel.app", repo: "https://github.com/Kayes2323/move-app" },
-      related: ["determind", "sondhan"]
-    },
-
-    {
-      slug: "determind", name: "DeterMind", aka: null, status: "active",
-      logo: "assets/img/logo-determind.jpg", logoBg: "#0f0f0f",
-      category: { en: "Productivity", bn: "উৎপাদনশীলতা" },
-      summary: {
-        en: "A personal life-tracking and self-improvement dashboard for students: to-dos, routines, focus sessions, progress charts and an AI assistant.",
-        bn: "শিক্ষার্থীদের জন্য ব্যক্তিগত লাইফ-ট্র্যাকিং ও আত্মউন্নয়ন ড্যাশবোর্ড: টু-ডু, রুটিন, ফোকাস সেশন, অগ্রগতির চার্ট ও একটি এআই সহকারী।"
-      },
-      problem: null, users: null,
-      concept: {
-        en: "\"Determine your path. Dominate your day.\" One place where a student plans the day, builds a routine, focuses, and sees progress.",
-        bn: "\"নিজের পথ ঠিক করো। নিজের দিন জয় করো।\" শিক্ষার্থী এক জায়গায় দিনের পরিকল্পনা করে, রুটিন বানায়, মনোযোগ দেয় এবং অগ্রগতি দেখে।"
-      },
-      implemented: [
-        { en: "Home with a personal goal, daily score, streak, exam countdown and an AI Coach analysis of the day", bn: "ব্যক্তিগত লক্ষ্য, দৈনিক স্কোর, স্ট্রিক, পরীক্ষার কাউন্টডাউন ও দিনের এআই কোচ বিশ্লেষণসহ হোম" },
-        { en: "A tracker with custom columns, a monthly report table and trend charts", bn: "কাস্টম কলাম, মাসিক রিপোর্ট টেবিল ও ট্রেন্ড চার্টসহ ট্র্যাকার" },
-        { en: "To-do and daily routine planning", bn: "টু-ডু ও দৈনিক রুটিন পরিকল্পনা" },
-        { en: "A focus timer with Pomodoro, Deep Work and short modes, plus a blocker tab", bn: "পোমোডোরো, ডিপ ওয়ার্ক ও শর্ট মোডসহ ফোকাস টাইমার, আর একটি ব্লকার ট্যাব" },
-        { en: "Sigma, an AI mentor chat, served through a server route that only signed-in users can call", bn: "সিগমা নামের এআই মেন্টর চ্যাট, একটি সার্ভার রুটের মাধ্যমে যেটা শুধু সাইন-ইন করা ব্যবহারকারী ডাকতে পারে" },
-        { en: "Sign-in, a profile and a leaderboard, with data stored in Supabase", bn: "সাইন-ইন, প্রোফাইল ও লিডারবোর্ড, ডেটা সংরক্ষিত সুপাবেসে" },
-        { en: "Installable as a PWA, with a notification hook and a service worker", bn: "PWA হিসেবে ইনস্টল করা যায়, নোটিফিকেশন হুক ও সার্ভিস ওয়ার্কার সহ" }
-      ],
-      planned: [],
-      role: {
-        en: "The README credits me as the builder. The exact split between my decisions and AI-assisted work is still to be added.",
-        bn: "README-তে আমাকে নির্মাতা হিসেবে উল্লেখ করা আছে। আমার সিদ্ধান্ত আর এআই-সহায়তার সুনির্দিষ্ট ভাগ এখনও যোগ হয়নি।"
-      },
-      tech: ["React", "Vite", "Supabase", "Zustand", "React Router", "Recharts", "Framer Motion", "Tailwind CSS", "Groq API"],
-      shots: [
-        { ar: 0.529, src: "assets/img/projects/determind/home.jpg", alt: { en: "DeterMind home with the goal, daily score, streak and AI Coach analysis", bn: "লক্ষ্য, দৈনিক স্কোর, স্ট্রিক ও এআই কোচ বিশ্লেষণসহ ডিটারমাইন্ডের হোম" } },
-        { ar: 0.529, src: "assets/img/projects/determind/tracker.jpg", alt: { en: "DeterMind tracker with monthly totals for custom columns", bn: "কাস্টম কলামের মাসিক যোগফলসহ ডিটারমাইন্ডের ট্র্যাকার" } },
-        { ar: 0.494, src: "assets/img/projects/determind/focus.jpg", alt: { en: "DeterMind focus timer set to a 25-minute Pomodoro", bn: "২৫ মিনিটের পোমোডোরো সেট করা ডিটারমাইন্ডের ফোকাস টাইমার" } },
-        { ar: 0.529, src: "assets/img/projects/determind/sigma.jpg", alt: { en: "Sigma, the DeterMind AI mentor, answering a question in Bangla", bn: "বাংলায় প্রশ্নের উত্তর দিচ্ছে ডিটারমাইন্ডের এআই মেন্টর সিগমা" } }
-      ],
-      challenges: {
-        en: "The latest commit records moving the AI calls to a server route so the API key never ships to the browser. The route also checks that the caller has a valid session.",
-        bn: "সর্বশেষ কমিটে এআই কলগুলো সার্ভার রুটে সরানোর কথা লেখা আছে, যাতে এপিআই কী কখনও ব্রাউজারে না যায়। রুটটি কলারের বৈধ সেশনও যাচাই করে।"
-      },
-      limitations: {
-        en: "In active development, as the README says. The AI assistant needs a server-side key to work.",
-        bn: "README অনুযায়ী সক্রিয় উন্নয়নে আছে। এআই সহকারী চলতে সার্ভার-সাইড কী লাগে।"
-      },
-      basis: ["README", "src/pages and src/store", "api/ai.js", "package.json", "screenshots of the live app supplied by me"],
-      links: { demo: "https://deter-mind.vercel.app", repo: "https://github.com/Kayes2323/DeterMind" },
-      related: ["move", "sondhan"]
-    },
-
     {
       slug: "sondhan", name: "Sondhan", aka: null, status: "deployed",
       logo: "assets/img/logo-sondhan.jpg", logoBg: "#ca362d",
@@ -238,7 +143,102 @@ window.SITE = {
       },
       basis: ["docs/ARCHITECTURE.md", "docs/FOUNDATION_INTEGRATION_INVENTORY.md", "app routes and api routes", "package.json", "my GitHub profile README (name and live URL)", "screenshots supplied by me"],
       links: { demo: "https://vocabrain.vercel.app", repo: "https://github.com/Kayes2323/Vocabrain" },
-      related: ["sondhan", "furqan"]
+      related: ["sondhan", "move"]
+    },
+
+    {
+      slug: "move", name: "MOVE", aka: null, status: "active",
+      logo: "assets/img/logo-move.jpg", logoBg: "#000000",
+      category: { en: "Fitness", bn: "ফিটনেস" },
+      summary: {
+        en: "A running app that turns the distance you actually run into progress along real routes across Bangladesh, starting from Dhaka.",
+        bn: "বাস্তবে যত দূর দৌড়ান সেটাকে বাংলাদেশের আসল রুটে এগিয়ে যাওয়ায় রূপ দেওয়া একটি রানিং অ্যাপ, যাত্রা শুরু ঢাকা থেকে।"
+      },
+      problem: null, users: null,
+      concept: {
+        en: "Every kilometre recorded by GPS moves you forward along a real route, one real town at a time. A Territory mode rewards exploring real streets on foot (kilometres do not count towards it), piloted for Mohammadpur in Dhaka.",
+        bn: "জিপিএসে মাপা প্রতিটি কিলোমিটার আপনাকে একটি আসল রুটে, একটি করে আসল শহর পেরিয়ে এগিয়ে নেয়। টেরিটরি মোডে পায়ে হেঁটে আসল রাস্তা ঘুরে দেখলে অগ্রগতি হয় (এতে কিলোমিটার গোনা হয় না), আপাতত ঢাকার মোহাম্মদপুরে পরীক্ষামূলকভাবে।"
+      },
+      implemented: [
+        { en: "GPS run and walk tracking on a live map", bn: "লাইভ ম্যাপে জিপিএস রান ও ওয়াক ট্র্যাকিং" },
+        { en: "Journeys from Dhaka to places such as Cox's Bazar, Sylhet and Khulna, with real towns as checkpoints", bn: "ঢাকা থেকে কক্সবাজার, সিলেট, খুলনার মতো গন্তব্যে যাত্রা, আসল শহরগুলো চেকপয়েন্ট" },
+        { en: "Run results, a leaderboard and shareable cards", bn: "রানের ফলাফল, লিডারবোর্ড ও শেয়ার করার কার্ড" },
+        { en: "Onboarding, login and a profile", bn: "অনবোর্ডিং, লগইন ও প্রোফাইল" },
+        { en: "Territory pilot: explore the real streets of Mohammadpur to conquer it, using an OpenStreetMap-based map mask", bn: "টেরিটরি পাইলট: মোহাম্মদপুরের আসল রাস্তা ঘুরে এলাকাটি জয় করা, ওপেনস্ট্রিটম্যাপভিত্তিক ম্যাপ মাস্ক দিয়ে" },
+        { en: "Every GPS point is saved on the device first and synced later, so a crash or lost signal does not lose a run", bn: "প্রতিটি জিপিএস পয়েন্ট আগে ডিভাইসে সেভ হয়, পরে সিঙ্ক হয়, তাই ক্র্যাশ বা সিগন্যাল গেলেও রান হারায় না" }
+      ],
+      planned: [
+        { en: "Reliable background tracking through a native Capacitor shell (its configuration is in the repository)", bn: "নেটিভ ক্যাপাসিটর শেলের মাধ্যমে নির্ভরযোগ্য ব্যাকগ্রাউন্ড ট্র্যাকিং (কনফিগারেশন রিপোজিটরিতে আছে)" }
+      ],
+      role: {
+        en: "The README credits me as the builder. The repository contains CLAUDE.md and AGENTS.md files, so AI coding tools were part of the workflow. The exact split between my decisions and AI-assisted work is still to be added.",
+        bn: "README-তে আমাকে নির্মাতা হিসেবে উল্লেখ করা আছে। রিপোজিটরিতে CLAUDE.md ও AGENTS.md ফাইল আছে, অর্থাৎ কাজে এআই কোডিং টুল ব্যবহৃত হয়েছে। আমার সিদ্ধান্ত আর এআই-সহায়তার সুনির্দিষ্ট ভাগ এখনও যোগ হয়নি।"
+      },
+      tech: ["Next.js", "TypeScript", "Firebase", "Leaflet", "Tailwind CSS", "Capacitor"],
+      shots: [
+        { ar: 0.467, src: "assets/img/projects/move/hub-progress.jpg", alt: { en: "MOVE Territory screen showing Mohammadpur 50 percent explored", bn: "মোহাম্মদপুর ৫০ শতাংশ ঘোরা দেখাচ্ছে এমন MOVE-এর টেরিটরি স্ক্রিন" } },
+        { ar: 0.487, src: "assets/img/projects/move/hub-start.jpg", alt: { en: "MOVE Territory screen before choosing Mohammadpur", bn: "মোহাম্মদপুর বেছে নেওয়ার আগের MOVE-এর টেরিটরি স্ক্রিন" } },
+        { ar: 0.487, src: "assets/img/projects/move/hub-conquered.jpg", alt: { en: "MOVE Territory screen with Mohammadpur conquered", bn: "মোহাম্মদপুর জয় হয়েছে এমন MOVE-এর টেরিটরি স্ক্রিন" } },
+        { ar: 0.8, src: "assets/img/projects/move/routes-share.jpg", alt: { en: "MOVE share card for a Dhaka to Chandpur journey", bn: "ঢাকা থেকে চাঁদপুর যাত্রার MOVE শেয়ার কার্ড" } }
+      ],
+      challenges: {
+        en: "Browsers stop delivering GPS positions when the screen locks, so the repository documents two tracking modes: the web app today, and a native Capacitor shell with background location as the way to fix it.",
+        bn: "স্ক্রিন লক হলে ব্রাউজার জিপিএস পজিশন দেওয়া বন্ধ করে দেয়, তাই রিপোজিটরিতে দুটি ট্র্যাকিং মোড লেখা আছে: এখনকার ওয়েব অ্যাপ, আর সমাধান হিসেবে ব্যাকগ্রাউন্ড লোকেশনসহ নেটিভ ক্যাপাসিটর শেল।"
+      },
+      limitations: {
+        en: "In active development, as the README says. Background tracking on the web is limited by the browser. Territory is a pilot for one area.",
+        bn: "README অনুযায়ী সক্রিয় উন্নয়নে আছে। ওয়েবে ব্যাকগ্রাউন্ড ট্র্যাকিং ব্রাউজারের সীমার মধ্যে। টেরিটরি শুধু একটি এলাকায় পাইলট।"
+      },
+      basis: ["README", "app routes and source code", "docs/TERRITORY.md", "docs/NATIVE.md", "docs/screenshots"],
+      links: { demo: "https://move-app-h2me.vercel.app", repo: "https://github.com/Kayes2323/move-app" },
+      related: ["determind", "mino"]
+    },
+
+    {
+      slug: "determind", name: "DeterMind", aka: null, status: "active",
+      logo: "assets/img/logo-determind.jpg", logoBg: "#0f0f0f",
+      category: { en: "Productivity", bn: "উৎপাদনশীলতা" },
+      summary: {
+        en: "A personal life-tracking and self-improvement dashboard for students: to-dos, routines, focus sessions, progress charts and an AI assistant.",
+        bn: "শিক্ষার্থীদের জন্য ব্যক্তিগত লাইফ-ট্র্যাকিং ও আত্মউন্নয়ন ড্যাশবোর্ড: টু-ডু, রুটিন, ফোকাস সেশন, অগ্রগতির চার্ট ও একটি এআই সহকারী।"
+      },
+      problem: null, users: null,
+      concept: {
+        en: "\"Determine your path. Dominate your day.\" One place where a student plans the day, builds a routine, focuses, and sees progress.",
+        bn: "\"নিজের পথ ঠিক করো। নিজের দিন জয় করো।\" শিক্ষার্থী এক জায়গায় দিনের পরিকল্পনা করে, রুটিন বানায়, মনোযোগ দেয় এবং অগ্রগতি দেখে।"
+      },
+      implemented: [
+        { en: "Home with a personal goal, daily score, streak, exam countdown and an AI Coach analysis of the day", bn: "ব্যক্তিগত লক্ষ্য, দৈনিক স্কোর, স্ট্রিক, পরীক্ষার কাউন্টডাউন ও দিনের এআই কোচ বিশ্লেষণসহ হোম" },
+        { en: "A tracker with custom columns, a monthly report table and trend charts", bn: "কাস্টম কলাম, মাসিক রিপোর্ট টেবিল ও ট্রেন্ড চার্টসহ ট্র্যাকার" },
+        { en: "To-do and daily routine planning", bn: "টু-ডু ও দৈনিক রুটিন পরিকল্পনা" },
+        { en: "A focus timer with Pomodoro, Deep Work and short modes, plus a blocker tab", bn: "পোমোডোরো, ডিপ ওয়ার্ক ও শর্ট মোডসহ ফোকাস টাইমার, আর একটি ব্লকার ট্যাব" },
+        { en: "Sigma, an AI mentor chat, served through a server route that only signed-in users can call", bn: "সিগমা নামের এআই মেন্টর চ্যাট, একটি সার্ভার রুটের মাধ্যমে যেটা শুধু সাইন-ইন করা ব্যবহারকারী ডাকতে পারে" },
+        { en: "Sign-in, a profile and a leaderboard, with data stored in Supabase", bn: "সাইন-ইন, প্রোফাইল ও লিডারবোর্ড, ডেটা সংরক্ষিত সুপাবেসে" },
+        { en: "Installable as a PWA, with a notification hook and a service worker", bn: "PWA হিসেবে ইনস্টল করা যায়, নোটিফিকেশন হুক ও সার্ভিস ওয়ার্কার সহ" }
+      ],
+      planned: [],
+      role: {
+        en: "The README credits me as the builder. The exact split between my decisions and AI-assisted work is still to be added.",
+        bn: "README-তে আমাকে নির্মাতা হিসেবে উল্লেখ করা আছে। আমার সিদ্ধান্ত আর এআই-সহায়তার সুনির্দিষ্ট ভাগ এখনও যোগ হয়নি।"
+      },
+      tech: ["React", "Vite", "Supabase", "Zustand", "React Router", "Recharts", "Framer Motion", "Tailwind CSS", "Groq API"],
+      shots: [
+        { ar: 0.529, src: "assets/img/projects/determind/home.jpg", alt: { en: "DeterMind home with the goal, daily score, streak and AI Coach analysis", bn: "লক্ষ্য, দৈনিক স্কোর, স্ট্রিক ও এআই কোচ বিশ্লেষণসহ ডিটারমাইন্ডের হোম" } },
+        { ar: 0.529, src: "assets/img/projects/determind/tracker.jpg", alt: { en: "DeterMind tracker with monthly totals for custom columns", bn: "কাস্টম কলামের মাসিক যোগফলসহ ডিটারমাইন্ডের ট্র্যাকার" } },
+        { ar: 0.494, src: "assets/img/projects/determind/focus.jpg", alt: { en: "DeterMind focus timer set to a 25-minute Pomodoro", bn: "২৫ মিনিটের পোমোডোরো সেট করা ডিটারমাইন্ডের ফোকাস টাইমার" } },
+        { ar: 0.529, src: "assets/img/projects/determind/sigma.jpg", alt: { en: "Sigma, the DeterMind AI mentor, answering a question in Bangla", bn: "বাংলায় প্রশ্নের উত্তর দিচ্ছে ডিটারমাইন্ডের এআই মেন্টর সিগমা" } }
+      ],
+      challenges: {
+        en: "The latest commit records moving the AI calls to a server route so the API key never ships to the browser. The route also checks that the caller has a valid session.",
+        bn: "সর্বশেষ কমিটে এআই কলগুলো সার্ভার রুটে সরানোর কথা লেখা আছে, যাতে এপিআই কী কখনও ব্রাউজারে না যায়। রুটটি কলারের বৈধ সেশনও যাচাই করে।"
+      },
+      limitations: {
+        en: "In active development, as the README says. The AI assistant needs a server-side key to work.",
+        bn: "README অনুযায়ী সক্রিয় উন্নয়নে আছে। এআই সহকারী চলতে সার্ভার-সাইড কী লাগে।"
+      },
+      basis: ["README", "src/pages and src/store", "api/ai.js", "package.json", "screenshots of the live app supplied by me"],
+      links: { demo: "https://deter-mind.vercel.app", repo: "https://github.com/Kayes2323/DeterMind" },
+      related: ["move", "furqan"]
     },
 
     {
@@ -323,9 +323,9 @@ window.SITE = {
         ["UI/UX and responsive design", "Real-project examples: pending audit"],
         ["Deployment and tools", "Verified in code: Vercel, PWA service workers, Git"]
       ],
-      pHead: "Portfolio", pScript: "Projects",
-      pIntro: "Five projects. Details come from each repository's README, code and docs. Live links are as reported there.",
-      pjScript: "Project", caseLink: "Case study →", catPending: "Category: to be confirmed",
+      pHead: "My Projects", pScript: "Work",
+      pIntro: "Five products I have built, newest ideas last. Details come from each repository's README, code and docs, and live links are as reported there.",
+      pjScript: "Project", caseLink: "Case study →", highlights: "What it does", viewProject: "View", catPending: "Category: to be confirmed",
       liveLink: "Live ↗", codeLink: "GitHub ↗", shotNeeded: "Screenshot needed",
       cHead: "Let's work", cScript: "Together",
       cCopy: "Open to relevant conversations and collaboration. Reach me on any of these.", waText: "Message on WhatsApp", findMe: "Find me",
@@ -382,9 +382,9 @@ window.SITE = {
         ["ইউআই/ইউএক্স ও রেসপনসিভ ডিজাইন", "বাস্তব প্রকল্পের উদাহরণ: যাচাই বাকি"],
         ["ডিপ্লয়মেন্ট ও টুল", "কোডে যাচাইকৃত: Vercel, PWA সার্ভিস ওয়ার্কার, Git"]
       ],
-      pHead: "পোর্টফোলিও", pScript: "প্রকল্প",
-      pIntro: "পাঁচটি প্রকল্প। বিস্তারিত প্রতিটি রিপোজিটরির README, কোড ও ডকুমেন্ট থেকে নেওয়া। লাইভ লিংক সেখানে উল্লেখ অনুযায়ী।",
-      pjScript: "প্রকল্প", caseLink: "কেস স্টাডি →", catPending: "বিভাগ: নিশ্চিত করা হবে",
+      pHead: "আমার প্রকল্প", pScript: "কাজ",
+      pIntro: "আমার তৈরি পাঁচটি প্রোডাক্ট। বিস্তারিত প্রতিটি রিপোজিটরির README, কোড ও ডকুমেন্ট থেকে নেওয়া, আর লাইভ লিংক সেখানে উল্লেখ অনুযায়ী।",
+      pjScript: "প্রকল্প", caseLink: "কেস স্টাডি →", highlights: "কী করে", viewProject: "দেখুন", catPending: "বিভাগ: নিশ্চিত করা হবে",
       liveLink: "লাইভ ↗", codeLink: "গিটহাব ↗", shotNeeded: "স্ক্রিনশট প্রয়োজন",
       cHead: "চলুন কাজ করি", cScript: "একসাথে",
       cCopy: "প্রাসঙ্গিক আলোচনা ও সহযোগিতার জন্য উন্মুক্ত। নিচের যেকোনো মাধ্যমে যোগাযোগ করুন।", waText: "হোয়াটসঅ্যাপে বার্তা পাঠান", findMe: "যোগাযোগ",
