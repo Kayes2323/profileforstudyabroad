@@ -9,7 +9,8 @@ project.html      one template for every project case study, chosen by the URL h
 css/styles.css    design system (black condensed headlines, pink script words, blurred blobs)
 js/content.js     ALL content and translations (edit this file, not the HTML)
 js/app.js         renders the pages from content.js, language switch, case-study template
-assets/img/       optimized photos (full colour)
+assets/img/       optimized photos (full colour), supplied project logos, MOVE screenshots
+docs/             project-research.md (what each repository really contains)
 legacy/           the previous study-abroad page, kept for reference
 ```
 
@@ -40,27 +41,29 @@ Set `contact.github`, `contact.linkedin`, `contact.email` in `js/content.js`. Un
 
 | File | Used for | Received | Permission to publish |
 |---|---|---|---|
-| `hero.webp` | Hero cut-out (background removed from a supplied photo) | yes | owner supplied, confirm |
-| `intro.jpg` | Introduction | yes | owner supplied, confirm |
-| `about.jpg` | About | yes | owner supplied, confirm |
-| `edu.jpg` | Education (beside the Dhaka College Science Club emblem) | yes | owner supplied, confirm |
-| `skills-1.jpg`, `skills-2.jpg` | Skills slide (decorative) | yes | owner supplied, confirm |
+| `hero.jpg` | Hero (full-colour portrait, background kept) | yes | owner supplied, confirm |
+| `intro.jpg`, `about.jpg`, `edu.jpg`, `skills-1.jpg`, `skills-2.jpg` | Section photos | yes | owner supplied, confirm |
 | `moment-*.jpg` (5) | "Beyond code" collage | yes | owner supplied, confirm |
-| Project screenshots | Project slides, case studies, "What I build" | **not received** | n/a |
-| Project logos | Project slides | **not received** | n/a |
-| Personal logo / monogram | Header, favicon | **not received**, `favicon.svg` is a neutral placeholder dot | n/a |
+| `logo-move.jpg`, `logo-determind.jpg`, `logo-sondhan.jpg`, `logo-mino.jpg`, `logo-furqan.jpg` | Project logos, shown unchanged (resized only) | yes | owner supplied, confirm |
+| `projects/move/*.jpg` (4) | MOVE slide and case study | taken from `docs/screenshots` in the move-app repository | owner's own repository, confirm |
+| Screenshots for DeterMind, Sondhan, Mino, Furqan | Project slides, case studies | **not found in repositories, not supplied** | n/a |
+| Higher-resolution Mino logo | Mino tile (current file is 216 px) | **needed** | n/a |
+| Personal logo / monogram | Header, favicon | **not received**; `favicon.svg` is a neutral placeholder dot | n/a |
+| `og.jpg` | Social preview (screenshot of the hero) | generated | n/a |
 
 Photos with other people in them were left out on purpose.
 
 ## Still needed from the owner
 
-1. For each of the six projects: GitHub link, live URL (if any), 2 or more real screenshots (desktop and mobile), and a short note on what was built by hand and what was AI-assisted.
-2. GitHub, LinkedIn and email for the contact section.
-3. SSC year, if it should be shown.
-4. Project logos and a personal logo or monogram, if wanted.
-5. The final domain (for the social preview image URL).
+1. For DeterMind, Sondhan, Mino and Furqan: 2 or more real screenshots each (desktop and mobile).
+2. Confirm that each live URL is current (they could not be opened while building).
+3. LinkedIn and email for the contact section (GitHub is set).
+4. A higher-resolution Mino logo, and a personal logo or monogram if wanted.
+5. For every project: problem, target users, and the split between your own decisions and AI-assisted work.
+6. SSC year, if it should be shown.
+7. The final domain (for the social preview image URL).
+8. Whether Bazare and Healdi should also appear.
 
-## Known discrepancies in earlier content
+## Known discrepancies
 
-- The old study-abroad page listed the project as "Vocabrain"; the brief says "Vocabulary / Vocabrain". The final name is still to be confirmed.
-- Project descriptions in the old page were not carried over, because they were not yet checked against the repositories.
+See `docs/project-research.md`. In short: Mino and Vocabrain are one product, and project descriptions on the old study-abroad page were replaced by facts read from the repositories.
